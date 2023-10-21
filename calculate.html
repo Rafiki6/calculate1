@@ -11,7 +11,7 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/main.css">
-    <script src="./scripts/main.js"></script>
+    <!-- <script src="./scripts/main.js"></script> -->
 
 </head>
 
@@ -27,53 +27,48 @@
 
             <div>
                 <label for="amount">Amaount
-                    <input type="number" id="amount" value="0.00">
+                    <input type="number" id="amount" value="53000">
                 </label>
             </div>
             <br>
             <div>
                 <label for="rate">Rate
-                    <input type="number" id="rate" value="0.00">
+                    <input type="number" id="rate" value="7.625">
                 </label>
             </div>
             <br>
             <div>
                 <label for="year">Year
-                    <input type="number" id="year" value="0">
+                    <input type="number" id="year" value="15">
                 </label>
 
             </div>
             <br>
-            <button type="button" class="btn btn-primary" id="calculate">Calculate</button>
+            <button type="button" class="btn btn-primary" id="calculateBtn">Calculate</button>
             <br>
             <br>
             <label for="result">Result <br>
-                <input type="text" id="result" readonly />
+                <input type="number" id="result" readonly>
             </label>
         </fieldset>
     </div>
 </body>
 <script>
-    const amount = document.getElementById("amount");
-    const rate = document.getElementById("rate");
-    const year = document.getElementById("year");
-    const result = document.getElementById("result")
-
     function calculateLoan() {
 
-        let amountPay = Number(amount.value);
-        let rateMounth = Number(rate.value);
-        let yearValue = Number(year.value);
-        let result = Number(result.value)
+        let amountPay = Number(document.getElementById("amount").value);
+        let rateMounth = Number(document.getElementById("rate").value);
+        let yearValue = Number(document.getElementById("year").value);
+
 
         const apr = rateMounth / 1200;
         const term = yearValue * 12;
-        const payment = amt * (apr * Math.pow((1 + apr), term)) / (Math.pow((1 + apr), term) - 1);
+        const payment = amountPay * (apr * Math.pow((1 + apr), term)) / (Math.pow((1 + apr), term) - 1);
 
-        result.value = payment;
+        document.getElementById("result").value = payment.toFixed(2);
     }
-
-    calculate.onclick = calculateLoan;
+    const calculateBtn = document.getElementById("calculateBtn");
+    calculateBtn.onclick = calculateLoan;
 </script>
 
 </html>

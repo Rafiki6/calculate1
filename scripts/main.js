@@ -1,20 +1,17 @@
-const amount = document.getElementById("amount");
-const rate = document.getElementById("rate");
-const year = document.getElementById("year");
-const result = document.getElementById("result")
 
-function calculateLoan(){
 
-    let amountPay = Number(amount.value);
-    let rateMounth = Number(rate.value);
-    let yearValue = Number(year.value);
-    let result = Number(result.value)
+function calculateLoan() {
 
-    const apr = rateMounth/1200;
-    const term = yearValue*12;
-    const payment = amt*(apr * Math.pow((1 + apr), term))/(Math.pow((1 + apr), term) - 1);
-   
-    result.value = payment;
+    let amountPay = Number(document.getElementById("amount").value);
+    let rateMounth = Number(document.getElementById("rate").value);
+    let yearValue = Number(document.getElementById("year").value);
+ 
+
+    const apr = rateMounth / 1200;
+    const term = yearValue * 12;
+    const payment = amountPay * (apr * Math.pow((1 + apr), term)) / (Math.pow((1 + apr), term) - 1);
+
+    document.getElementById("result").value = payment.toFixed(2);
 }
-
-calculate.onclick = calculateLoan
+const calculateBtn = document.getElementById("calculateBtn");
+calculateBtn.onclick = calculateLoan;
