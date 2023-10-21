@@ -11,6 +11,7 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/main.css">
+    <script src="./scripts/main.js"></script>
 
 </head>
 
@@ -18,34 +19,61 @@
     <div id="header">
         <fieldset>
             <legend>Calculate</legend>
-        <!-- <h1></h1> -->
-        
-        <p>Example: A $53,000 loan at 7.625% interest for 15 years would have a $495.09/mo
-            payment with a total interest of $36,115.99
-        </p>
+            <!-- <h1></h1> -->
 
-        <div >
-            <label for="amount">Amaount
-                <input type="number" id="amount" value="0.00">
-            </label>
-        </div>
-        <br>
-        <div >
-            <label for="rate">Rate
-                <input type="number" id="rate" value="0.00">
-            </label>
-        </div>
-        <br>
-        <div >
-            <label for="year">Year
-                <input type="number" id="year" value="0">
-            </label>
+            <p>Example: A $53,000 loan at 7.625% interest for 15 years would have a $495.09/mo
+                payment with a total interest of $36,115.99
+            </p>
 
-        </div>
-        <br>
-        <button type="button" class="btn btn-primary" id ="calculate">Calculate</button>
-    </fieldset>
+            <div>
+                <label for="amount">Amaount
+                    <input type="number" id="amount" value="0.00">
+                </label>
+            </div>
+            <br>
+            <div>
+                <label for="rate">Rate
+                    <input type="number" id="rate" value="0.00">
+                </label>
+            </div>
+            <br>
+            <div>
+                <label for="year">Year
+                    <input type="number" id="year" value="0">
+                </label>
+
+            </div>
+            <br>
+            <button type="button" class="btn btn-primary" id="calculate">Calculate</button>
+            <br>
+            <br>
+            <label for="result">Result <br>
+                <input type="text" id="result" readonly />
+            </label>
+        </fieldset>
     </div>
 </body>
+<script>
+    const amount = document.getElementById("amount");
+    const rate = document.getElementById("rate");
+    const year = document.getElementById("year");
+    const result = document.getElementById("result")
+
+    function calculateLoan() {
+
+        let amountPay = Number(amount.value);
+        let rateMounth = Number(rate.value);
+        let yearValue = Number(year.value);
+        let result = Number(result.value)
+
+        const apr = rateMounth / 1200;
+        const term = yearValue * 12;
+        const payment = amt * (apr * Math.pow((1 + apr), term)) / (Math.pow((1 + apr), term) - 1);
+
+        result.value = payment;
+    }
+
+    calculate.onclick = calculateLoan;
+</script>
 
 </html>
