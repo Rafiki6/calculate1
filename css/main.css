@@ -1,0 +1,36 @@
+body{
+    background-color: beige;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   height: 100vh;
+}
+#header{
+    height: auto;
+    width: 1000px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    /* border: 1px solid black; */
+ 
+}
+label{
+    color: blue;
+}
+
+fieldset{
+     border: 1px solid rgb(200, 23, 23);
+     padding: 1rem; 
+}
+legend{
+    margin-top: -1.6em;
+    background-color: beige;
+    width: auto;
+    padding: 2px 4px;
+    color: rgb(203, 203, 227);
+    text-shadow: 1px 1px 3px black;
+
+}
