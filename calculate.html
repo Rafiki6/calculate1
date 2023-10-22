@@ -16,41 +16,45 @@
 </head>
 
 <body>
-    <div id="header">
-        <fieldset>
-            <legend>Calculate</legend>
-            <!-- <h1></h1> -->
+    <div class="container">
+        <img src="./images/portada.webp" alt="financial help">
 
-            <p>Example: A $53,000 loan at 7.625% interest for 15 years would have a $495.09/mo
-                payment with a total interest of $36,115.99
-            </p>
+        <div id="header">
+            <fieldset>
+                <legend>Calculate</legend>
+                <!-- <h1></h1> -->
 
-            <div>
-                <label for="amount">Amaount
-                    <input type="number" id="amount" value="53000">
-                </label>
-            </div>
-            <br>
-            <div>
-                <label for="rate">Rate
-                    <input type="number" id="rate" value="7.625">
-                </label>
-            </div>
-            <br>
-            <div>
-                <label for="year">Year
-                    <input type="number" id="year" value="15">
-                </label>
+                <p>Example: A $53,000 loan at 7.625% interest for 15 years would have a $495.09/mo
+                    payment with a total interest of $36,115.99
+                </p>
 
-            </div>
-            <br>
-            <button type="button" class="btn btn-primary" id="calculateBtn">Calculate</button>
-            <br>
-            <br>
-            <label for="result">Result <br>
-                <input type="number" id="result" readonly>
-            </label>
-        </fieldset>
+                <div>
+                    <label for="amount">Amaount
+                        <input type="number" id="amount" value="53000">
+                    </label>
+                </div>
+                <br>
+                <div>
+                    <label for="rate">Rate
+                        <input type="number" id="rate" value="7.625">
+                    </label>
+                </div>
+                <br>
+                <div>
+                    <label for="year">Year
+                        <input type="number" id="year" value="15">
+                    </label>
+
+                </div>
+                <br>
+                <button type="button" class="btn btn-primary" id="calculateBtn">Calculate</button>
+                <br>
+                <br>
+                <label for="result">Result <br>
+                    <input type="number" id="result" readonly>
+                </label>
+            </fieldset>
+        </div>
     </div>
 </body>
 <script>
