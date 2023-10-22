@@ -16,44 +16,51 @@
 </head>
 
 <body>
-    <div class="container">
+    <!-- <div class="container">
+        <img src="./images/portada.webp" alt="financial help"> 
+     <div class="card-img-overlay"> -->
+    <!-- </div> -->
+    <div class="card">
         <img src="./images/portada.webp" alt="financial help">
+        <div class="card-img-overlay">
 
-        <div id="header">
-            <fieldset>
-                <legend>Calculate</legend>
-                <!-- <h1></h1> -->
+            <div id="header">
+                <fieldset>
+                    <legend>Calculate</legend>
+                    <!-- <h1></h1> -->
 
-                <p>Example: A $53,000 loan at 7.625% interest for 15 years would have a $495.09/mo
-                    payment with a total interest of $36,115.99
-                </p>
+                    <p>Example: A $53,000 loan at 7.625% interest for 15 years would have a $495.09/mo
+                        payment with a total interest of $36,115.99
+                    </p>
 
-                <div>
-                    <label for="amount">Amaount
-                        <input type="number" id="amount" value="53000">
+                    <div>
+                        <label for="amount">Amaount
+                            <input type="number" id="amount" placeholder="$">
+                        </label>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="rate">Rate
+                            <input type="number" id="rate" placeholder="0%">
+                        </label>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="year">Year
+                            <input type="number" id="year" value="0">
+                        </label>
+
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-primary" id="calculateBtn">Calculate</button>
+                    <br>
+                    <br>
+                    <label for="result">Result <br>
+                        <input type="number" id="result" readonly placeholder="$">
                     </label>
-                </div>
-                <br>
-                <div>
-                    <label for="rate">Rate
-                        <input type="number" id="rate" value="7.625">
-                    </label>
-                </div>
-                <br>
-                <div>
-                    <label for="year">Year
-                        <input type="number" id="year" value="15">
-                    </label>
-
-                </div>
-                <br>
-                <button type="button" class="btn btn-primary" id="calculateBtn">Calculate</button>
-                <br>
-                <br>
-                <label for="result">Result <br>
-                    <input type="number" id="result" readonly>
-                </label>
-            </fieldset>
+                     
+                </fieldset>
+            </div>
         </div>
     </div>
 </body>
@@ -69,7 +76,7 @@
         const term = yearValue * 12;
         const payment = amountPay * (apr * Math.pow((1 + apr), term)) / (Math.pow((1 + apr), term) - 1);
 
-        document.getElementById("result").value = payment.toFixed(2);
+        document.getElementById("result").value =  payment.toFixed(2);
     }
     const calculateBtn = document.getElementById("calculateBtn");
     calculateBtn.onclick = calculateLoan;
