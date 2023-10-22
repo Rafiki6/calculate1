@@ -9,9 +9,9 @@ body{
   
 }
 .card img{
-    width: 107vh;
+    width: 150vh;
     opacity: 80%;
-    height: 52vh;
+    height: 70vh;
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -26,12 +26,15 @@ body{
  
 }
 label{
-    color: blue;
+    color:orange;
+}
+p{
+    color: orange;
 }
 
 fieldset{
      border: 1px solid rgb(200, 23, 23);
-     padding: 3.7rem; 
+     padding: 3.4rem; 
      margin: -1.rem;
 }
 legend{
@@ -42,4 +45,7 @@ legend{
     color: rgb(203, 203, 227);
     text-shadow: 1px 1px 3px black;
 
+}
+.btn{
+    color:beige;
 }
